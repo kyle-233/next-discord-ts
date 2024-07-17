@@ -20,12 +20,13 @@ import {
 } from '../ui/form'
 import { Input } from '../ui/input'
 import { Button } from '../ui/button'
+import { FileUpload } from '../file-upload'
 
 const formSchema = z.object({
   name: z.string().min(1, {
     message: 'Server name is required.',
   }),
-  iamgeUrl: z.string().min(1, {
+  imageUrl: z.string().min(1, {
     message: 'Server image is required.',
   }),
 })
@@ -35,7 +36,7 @@ export const InitialModal = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
-      iamgeUrl: '',
+      imageUrl: '',
     },
   })
   const isLoading = form.formState.isSubmitting
@@ -59,7 +60,21 @@ export const InitialModal = () => {
           <form className="space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
             <div className="space-y-8 px-6">
               <div className="flex items-center justify-center text-center">
-                TODO: Image Upload
+                <FormField
+                  control={form.control}
+                  name="imageUrl"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <FileUpload
+                          endpoint="serverImage"
+                          value={field.value}
+                          onChange={field.onChange}
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
               </div>
               <FormField
                 control={form.control}
