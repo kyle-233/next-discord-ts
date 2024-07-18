@@ -22,6 +22,7 @@ import { Input } from '../ui/input'
 import { Button } from '../ui/button'
 import { FileUpload } from '../file-upload'
 import { useRouter } from 'next/navigation'
+import { useModal } from '@/hooks/use-modal-store'
 
 const formSchema = z.object({
   name: z.string().min(1, {
@@ -32,8 +33,11 @@ const formSchema = z.object({
   }),
 })
 
-export const InitialModal = () => {
+export const CreateServerModal = () => {
+  const { isOpen, onClose, type } = useModal()
   const router = useRouter()
+
+  const isModalOpen = isOpen && type === 'createServer'
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -51,13 +55,17 @@ export const InitialModal = () => {
       })
       form.reset()
       router.refresh()
-      window.location.reload()
+      onClose()
     } catch (e) {
       console.log(e)
     }
   }
+  const handleClose = () => {
+    form.reset()
+    onClose()
+  }
   return (
-    <Dialog open>
+    <Dialog open={isModalOpen} onOpenChange={handleClose}>
       <DialogContent className="bg-white text-black p-0 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
           <DialogTitle className="text-2xl text-center font-bold">

@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Open_Sans } from 'next/font/google'
-import './globals.css'
-import { ThemeProvider } from '@/components/providers/theme-provider'
 import { cn } from '@/lib/utils'
+import { ThemeProvider } from '@/components/providers/theme-provider'
+import { ModalProvider } from '@/components/providers/modal-provider'
 
+import './globals.css'
 const font = Open_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <ModalProvider />
             {children}
           </ThemeProvider>
         </body>
