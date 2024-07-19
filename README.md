@@ -1,5 +1,21 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## UI
+
+- [shadcn-ui Documentation](https://ui.shadcn.com/) - Beautifully designed components that you can copy and paste into your apps.
+
+## Auth
+
+- [clerk Documentation](https://clerk.com) -
+
+## Upload
+
+- [uploadthing Documentation](https://docs.uploadthing.com/) - UploadThing is the easiest way to add file uploads to your full stack TypeScript application. Many services have tried to build a "better S3", but in our opinion, none found the right compromise of ownership, flexibility and safety.
+
+## zustand
+
+- [zustand Documentation]() -
+
 ## Getting Started
 
 First, run the development server:
