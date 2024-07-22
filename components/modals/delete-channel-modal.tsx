@@ -31,7 +31,7 @@ export const DeleteChannelModal = () => {
       const url = qs.stringifyUrl({
         url: `/api/channels/${channel?.id}`,
         query: {
-          serverId: params.serverId,
+          serverId: params?.serverId,
         },
       })
       await fetch(url, {
