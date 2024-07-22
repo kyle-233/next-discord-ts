@@ -14,8 +14,6 @@ export default async function Page() {
       },
     },
   })
-  console.log('profile', profile)
-  console.log('server', server)
 
   if (server) {
     return redirect(`/servers/${server.id}`)
