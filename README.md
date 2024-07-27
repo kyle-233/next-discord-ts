@@ -16,9 +16,17 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - [zustand Documentation]() -
 
-## 111
+## Prisma
 
--[111](https://xn--mes358a9urctx.com/#/login)
+-[Prisma](https://www.prisma.io/docs)
+
+## LiveKit
+
+-[LiveKit](https://livekit.io/)
+
+## React-Query
+
+-[React-Query](https://tanstack.com/query/latest/docs/framework/react/overview)
 
 ## Getting Started
 
